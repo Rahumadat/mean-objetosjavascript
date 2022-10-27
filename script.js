@@ -7,9 +7,14 @@ let students = [
     {name: 'Boris', cohort: 'June'}
 ];
 
-    for ( let i = 0 ; i < students.length ; i++) {
-        console.log("name:" + students[i].name + ",cohort: " + students[i].cohort);
+    function listado(element) {
+        for ( let i = 0 ; i < element.length ; i++) {
+            console.log("name:" + element[i].name + ",cohort: " + element[i].cohort);
+        }
     }
+
+    listado(students);
+
 /***************************************** */
 let users = {
     employees: [
@@ -24,14 +29,17 @@ let users = {
     ]
 };
 
+function contar(element) {
 console.log("employees");
-    for (let x = 0; x < users.employees.length ; x++) {
-        let suma = users.employees[x].last_name.length + users.employees[x].first_name.length; 
-        console.log(users.employees[x].last_name + ", " + users.employees[x].first_name + " - " + (suma));
+    for (let x = 0; x < element.employees.length ; x++) {
+        let suma = element.employees[x].last_name.length + element.employees[x].first_name.length; 
+        console.log(element.employees[x].last_name + ", " + element.employees[x].first_name + " - " + (suma));
     }   
     console.log("managers");
     for (let x = 0; x < users.managers.length ; x++) {
-        let suma = users.managers[x].last_name.length + users.managers[x].first_name.length;
-        console.log(users.managers[x].last_name + ", " + users.managers[x].first_name + " - " + (suma));
+        let suma = element.managers[x].last_name.length + element.managers[x].first_name.length;
+        console.log(element.managers[x].last_name + ", " + element.managers[x].first_name + " - " + (suma));
     }
+}
 
+contar (users);
